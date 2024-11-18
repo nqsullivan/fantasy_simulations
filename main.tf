@@ -6,15 +6,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "fantasy-simulator-lambda-tfstate"
-    region = "us-east-1"
-    key    = "terraform.tfstate"
+    bucket = ""
+    region = ""
+    key    = ""
   }
 }
 
 provider "aws" {
   region  = var.aws_region
-  profile = "personal"
 
   default_tags {
   }

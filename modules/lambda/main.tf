@@ -6,6 +6,7 @@ data "archive_file" "fantasy_simulator_lambda" {
   excludes = [
     "**/dependencies",
     "**/__pycache__",
+    "**/test_lambda_local.py"
   ]
 }
 
