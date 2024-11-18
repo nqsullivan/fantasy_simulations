@@ -1,0 +1,668 @@
+{
+    "type": "simulation",
+    "teams": [
+        {
+            "team_id": 1,
+            "team_name": "nqsullivan",
+            "team_owner": "999090207829962752",
+            "avg_points": 141.71,
+            "total_points": 1417.12,
+            "wins": 6,
+            "losses": 4
+        },
+        {
+            "team_id": 2,
+            "team_name": "Haydenand",
+            "team_owner": "999091570064367616",
+            "avg_points": 124.6,
+            "total_points": 1245.96,
+            "wins": 4,
+            "losses": 6
+        },
+        {
+            "team_id": 3,
+            "team_name": "BrodyAndersen",
+            "team_owner": "891184389508354048",
+            "avg_points": 147.68,
+            "total_points": 1476.76,
+            "wins": 8,
+            "losses": 2
+        },
+        {
+            "team_id": 4,
+            "team_name": "ColtA23",
+            "team_owner": "999096841813876736",
+            "avg_points": 114.42,
+            "total_points": 1144.24,
+            "wins": 1,
+            "losses": 9
+        },
+        {
+            "team_id": 5,
+            "team_name": "jaidenkackson",
+            "team_owner": "996199287178563584",
+            "avg_points": 134.87,
+            "total_points": 1348.72,
+            "wins": 5,
+            "losses": 5
+        },
+        {
+            "team_id": 6,
+            "team_name": "Isaiah2110",
+            "team_owner": "999217702277373952",
+            "avg_points": 142.01,
+            "total_points": 1420.1,
+            "wins": 6,
+            "losses": 4
+        },
+        {
+            "team_id": 7,
+            "team_name": "bcbounds13",
+            "team_owner": "1001287648213827584",
+            "avg_points": 130.46,
+            "total_points": 1304.62,
+            "wins": 5,
+            "losses": 5
+        },
+        {
+            "team_id": 8,
+            "team_name": "jmoh42",
+            "team_owner": "1001293641152913408",
+            "avg_points": 137.52,
+            "total_points": 1375.24,
+            "wins": 5,
+            "losses": 5
+        },
+        {
+            "team_id": 9,
+            "team_name": "JackBerg34",
+            "team_owner": "872567459193024512",
+            "avg_points": 149.85,
+            "total_points": 1498.46,
+            "wins": 4,
+            "losses": 6
+        },
+        {
+            "team_id": 10,
+            "team_name": "bradgreer24",
+            "team_owner": "1001312400328470528",
+            "avg_points": 125.43,
+            "total_points": 1254.3,
+            "wins": 6,
+            "losses": 4
+        }
+    ],
+    "league_id": "1048390514019553280",
+    "league_name": "Dynasty",
+    "playoff_info": {
+        "num_teams": 0,
+        "num_playoff_weeks": 0,
+        "playoff_weeks": [
+            14,
+            15,
+            16
+        ]
+    },
+    "matchups": [
+        {
+            "week": 1,
+            "team1": 1,
+            "team2": 3,
+            "team1_score": 133.3,
+            "team2_score": 142.38,
+            "winner": 3
+        },
+        {
+            "week": 1,
+            "team1": 2,
+            "team2": 10,
+            "team1_score": 108.3,
+            "team2_score": 132.54,
+            "winner": 10
+        },
+        {
+            "week": 1,
+            "team1": 4,
+            "team2": 8,
+            "team1_score": 90.22,
+            "team2_score": 119.32,
+            "winner": 8
+        },
+        {
+            "week": 1,
+            "team1": 5,
+            "team2": 6,
+            "team1_score": 150.54,
+            "team2_score": 148.7,
+            "winner": 5
+        },
+        {
+            "week": 1,
+            "team1": 7,
+            "team2": 9,
+            "team1_score": 136.62,
+            "team2_score": 149.7,
+            "winner": 9
+        },
+        {
+            "week": 2,
+            "team1": 1,
+            "team2": 2,
+            "team1_score": 143.16,
+            "team2_score": 128.74,
+            "winner": 1
+        },
+        {
+            "week": 2,
+            "team1": 3,
+            "team2": 10,
+            "team1_score": 101.54,
+            "team2_score": 102.76,
+            "winner": 10
+        },
+        {
+            "week": 2,
+            "team1": 4,
+            "team2": 9,
+            "team1_score": 151.26,
+            "team2_score": 140.72,
+            "winner": 4
+        },
+        {
+            "week": 2,
+            "team1": 5,
+            "team2": 7,
+            "team1_score": 119.78,
+            "team2_score": 132.92,
+            "winner": 7
+        },
+        {
+            "week": 2,
+            "team1": 6,
+            "team2": 8,
+            "team1_score": 178.48,
+            "team2_score": 137.64,
+            "winner": 6
+        },
+        {
+            "week": 3,
+            "team1": 1,
+            "team2": 10,
+            "team1_score": 142.42,
+            "team2_score": 124.06,
+            "winner": 1
+        },
+        {
+            "week": 3,
+            "team1": 2,
+            "team2": 3,
+            "team1_score": 126.18,
+            "team2_score": 126.2,
+            "winner": 3
+        },
+        {
+            "week": 3,
+            "team1": 4,
+            "team2": 6,
+            "team1_score": 107.82,
+            "team2_score": 134.02,
+            "winner": 6
+        },
+        {
+            "week": 3,
+            "team1": 5,
+            "team2": 9,
+            "team1_score": 171.68,
+            "team2_score": 143.76,
+            "winner": 5
+        },
+        {
+            "week": 3,
+            "team1": 7,
+            "team2": 8,
+            "team1_score": 101.56,
+            "team2_score": 129.74,
+            "winner": 8
+        },
+        {
+            "week": 4,
+            "team1": 1,
+            "team2": 7,
+            "team1_score": 167.06,
+            "team2_score": 133.12,
+            "winner": 1
+        },
+        {
+            "week": 4,
+            "team1": 2,
+            "team2": 5,
+            "team1_score": 137.0,
+            "team2_score": 123.62,
+            "winner": 2
+        },
+        {
+            "week": 4,
+            "team1": 3,
+            "team2": 4,
+            "team1_score": 155.32,
+            "team2_score": 136.22,
+            "winner": 3
+        },
+        {
+            "week": 4,
+            "team1": 6,
+            "team2": 10,
+            "team1_score": 152.36,
+            "team2_score": 128.3,
+            "winner": 6
+        },
+        {
+            "week": 4,
+            "team1": 8,
+            "team2": 9,
+            "team1_score": 143.7,
+            "team2_score": 118.82,
+            "winner": 8
+        },
+        {
+            "week": 5,
+            "team1": 1,
+            "team2": 9,
+            "team1_score": 183.1,
+            "team2_score": 164.82,
+            "winner": 1
+        },
+        {
+            "week": 5,
+            "team1": 2,
+            "team2": 6,
+            "team1_score": 125.68,
+            "team2_score": 111.04,
+            "winner": 2
+        },
+        {
+            "week": 5,
+            "team1": 3,
+            "team2": 8,
+            "team1_score": 155.28,
+            "team2_score": 121.02,
+            "winner": 3
+        },
+        {
+            "week": 5,
+            "team1": 4,
+            "team2": 7,
+            "team1_score": 105.98,
+            "team2_score": 135.66,
+            "winner": 7
+        },
+        {
+            "week": 5,
+            "team1": 5,
+            "team2": 10,
+            "team1_score": 126.22,
+            "team2_score": 140.5,
+            "winner": 10
+        },
+        {
+            "week": 6,
+            "team1": 1,
+            "team2": 8,
+            "team1_score": 122.3,
+            "team2_score": 195.8,
+            "winner": 8
+        },
+        {
+            "week": 6,
+            "team1": 2,
+            "team2": 7,
+            "team1_score": 137.38,
+            "team2_score": 146.48,
+            "winner": 7
+        },
+        {
+            "week": 6,
+            "team1": 3,
+            "team2": 6,
+            "team1_score": 135.64,
+            "team2_score": 128.6,
+            "winner": 3
+        },
+        {
+            "week": 6,
+            "team1": 4,
+            "team2": 5,
+            "team1_score": 106.14,
+            "team2_score": 135.92,
+            "winner": 5
+        },
+        {
+            "week": 6,
+            "team1": 9,
+            "team2": 10,
+            "team1_score": 162.28,
+            "team2_score": 130.64,
+            "winner": 9
+        },
+        {
+            "week": 7,
+            "team1": 1,
+            "team2": 4,
+            "team1_score": 141.06,
+            "team2_score": 82.92,
+            "winner": 1
+        },
+        {
+            "week": 7,
+            "team1": 2,
+            "team2": 9,
+            "team1_score": 80.0,
+            "team2_score": 175.74,
+            "winner": 9
+        },
+        {
+            "week": 7,
+            "team1": 3,
+            "team2": 5,
+            "team1_score": 170.8,
+            "team2_score": 146.48,
+            "winner": 3
+        },
+        {
+            "week": 7,
+            "team1": 6,
+            "team2": 7,
+            "team1_score": 143.64,
+            "team2_score": 112.66,
+            "winner": 6
+        },
+        {
+            "week": 7,
+            "team1": 8,
+            "team2": 10,
+            "team1_score": 133.28,
+            "team2_score": 138.02,
+            "winner": 10
+        },
+        {
+            "week": 8,
+            "team1": 1,
+            "team2": 5,
+            "team1_score": 127.86,
+            "team2_score": 115.84,
+            "winner": 1
+        },
+        {
+            "week": 8,
+            "team1": 2,
+            "team2": 8,
+            "team1_score": 162.68,
+            "team2_score": 149.6,
+            "winner": 2
+        },
+        {
+            "week": 8,
+            "team1": 3,
+            "team2": 7,
+            "team1_score": 143.92,
+            "team2_score": 172.1,
+            "winner": 7
+        },
+        {
+            "week": 8,
+            "team1": 4,
+            "team2": 10,
+            "team1_score": 104.22,
+            "team2_score": 107.3,
+            "winner": 10
+        },
+        {
+            "week": 8,
+            "team1": 6,
+            "team2": 9,
+            "team1_score": 159.66,
+            "team2_score": 145.94,
+            "winner": 6
+        },
+        {
+            "week": 9,
+            "team1": 1,
+            "team2": 6,
+            "team1_score": 129.72,
+            "team2_score": 148.7,
+            "winner": 6
+        },
+        {
+            "week": 9,
+            "team1": 2,
+            "team2": 4,
+            "team1_score": 150.08,
+            "team2_score": 129.28,
+            "winner": 2
+        },
+        {
+            "week": 9,
+            "team1": 3,
+            "team2": 9,
+            "team1_score": 156.98,
+            "team2_score": 140.94,
+            "winner": 3
+        },
+        {
+            "week": 9,
+            "team1": 5,
+            "team2": 8,
+            "team1_score": 131.32,
+            "team2_score": 103.5,
+            "winner": 5
+        },
+        {
+            "week": 9,
+            "team1": 7,
+            "team2": 10,
+            "team1_score": 140.52,
+            "team2_score": 130.74,
+            "winner": 7
+        },
+        {
+            "week": 10,
+            "team1": 1,
+            "team2": 3,
+            "team1_score": 127.14,
+            "team2_score": 188.7,
+            "winner": 3
+        },
+        {
+            "week": 10,
+            "team1": 2,
+            "team2": 10,
+            "team1_score": 89.92,
+            "team2_score": 119.44,
+            "winner": 10
+        },
+        {
+            "week": 10,
+            "team1": 4,
+            "team2": 8,
+            "team1_score": 130.18,
+            "team2_score": 141.64,
+            "winner": 8
+        },
+        {
+            "week": 10,
+            "team1": 5,
+            "team2": 6,
+            "team1_score": 127.32,
+            "team2_score": 114.9,
+            "winner": 5
+        },
+        {
+            "week": 10,
+            "team1": 7,
+            "team2": 9,
+            "team1_score": 92.98,
+            "team2_score": 155.74,
+            "winner": 9
+        },
+        {
+            "week": 11,
+            "team1": 1,
+            "team2": 2,
+            "team1_score": 127.34,
+            "team2_score": 89.34,
+            "winner": 1
+        },
+        {
+            "week": 11,
+            "team1": 3,
+            "team2": 10,
+            "team1_score": 98.6,
+            "team2_score": 59.4,
+            "winner": 3
+        },
+        {
+            "week": 11,
+            "team1": 4,
+            "team2": 9,
+            "team1_score": 127.38,
+            "team2_score": 129.4,
+            "winner": 9
+        },
+        {
+            "week": 11,
+            "team1": 5,
+            "team2": 7,
+            "team1_score": 129.52,
+            "team2_score": 104.18,
+            "winner": 5
+        },
+        {
+            "week": 11,
+            "team1": 6,
+            "team2": 8,
+            "team1_score": 158.36,
+            "team2_score": 124.2,
+            "winner": 6
+        },
+        {
+            "week": 12,
+            "team1": 1,
+            "team2": 10,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 12,
+            "team1": 2,
+            "team2": 3,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 12,
+            "team1": 4,
+            "team2": 6,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 12,
+            "team1": 5,
+            "team2": 9,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 12,
+            "team1": 7,
+            "team2": 8,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 13,
+            "team1": 1,
+            "team2": 7,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 13,
+            "team1": 2,
+            "team2": 5,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 13,
+            "team1": 3,
+            "team2": 4,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 13,
+            "team1": 6,
+            "team2": 10,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 13,
+            "team1": 8,
+            "team2": 9,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 14,
+            "team1": 1,
+            "team2": 9,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 14,
+            "team1": 2,
+            "team2": 6,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 14,
+            "team1": 3,
+            "team2": 8,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 14,
+            "team1": 4,
+            "team2": 7,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        },
+        {
+            "week": 14,
+            "team1": 5,
+            "team2": 10,
+            "team1_score": 0.0,
+            "team2_score": 0.0,
+            "winner": null
+        }
+    ]
+}
