@@ -50,7 +50,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Initialize Terraform
-        run: terraform init
+        run: terraform init -backend-config="bucket=${{ secrets.BACKEND_BUCKET }}" -backend-config="region=${{ secrets.BACKEND_BUCKET_REGION }}" -backend-config="key=${{ secrets.BACKEND_KEY }}"
 
       - name: Terraform Format Check
         run: terraform fmt -check
