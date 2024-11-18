@@ -37,15 +37,6 @@ jobs:
       - name: Verify installed dependencies
         run: ls -R fantasy_simulator_lambda/dependencies/python
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-
-      - name: Install Node.js dependencies
-        working-directory: CRM_Job_Runner
-        run: npm install
-
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
