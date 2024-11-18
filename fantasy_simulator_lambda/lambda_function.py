@@ -10,7 +10,7 @@ from utils.simulations import run_monte_carlo_simulation
 
 def lambda_handler(event, context):
     try:
-        request = json.loads(event["body"])
+        request = event["body"]
         teams = request["teams"]
         matchups = request["matchups"]
 
