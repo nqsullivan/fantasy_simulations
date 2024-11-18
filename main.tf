@@ -6,14 +6,15 @@ terraform {
   }
 
   backend "s3" {
-    bucket = ""
-    region = ""
-    key    = ""
+    bucket  = ""
+    region  = ""
+    profile = ""
+    key     = ""
   }
 }
 
 provider "aws" {
-  region  = var.aws_region
+  region = var.aws_region
 
   default_tags {
   }
