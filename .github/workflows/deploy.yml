@@ -61,10 +61,10 @@ jobs:
       - name: Terraform Plan
         env:
           TF_VAR_aws_region: us-east-1
-        run: terraform plan
+        run: terraform plan -out=tfplan
 
       - name: Terraform Apply
         if: github.event_name == 'push'
         env:
           TF_VAR_aws_region: us-east-1
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve tfplan
