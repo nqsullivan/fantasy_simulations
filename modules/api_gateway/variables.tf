@@ -6,7 +6,7 @@ variable "function_name" {
 variable "function_arn" {
   type        = string
   description = "ARN of the Lambda function"
-  
+
 }
 
 variable "role_arn" {

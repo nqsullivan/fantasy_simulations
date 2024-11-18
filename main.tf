@@ -22,10 +22,10 @@ provider "aws" {
 }
 
 module "lambda" {
-  source       = "./modules/lambda"
-  aws_region   = var.aws_region
-  role_name    = aws_iam_role.fantasy_simulator_lambda-role.name
-  iam_role_arn = aws_iam_role.fantasy_simulator_lambda-role.arn
+  source        = "./modules/lambda"
+  aws_region    = var.aws_region
+  role_name     = aws_iam_role.fantasy_simulator_lambda-role.name
+  iam_role_arn  = aws_iam_role.fantasy_simulator_lambda-role.arn
   function_name = "fantasy_simulator_lambda"
 }
 
