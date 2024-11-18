@@ -1,10 +1,12 @@
 import json
 import traceback
 
-from utils.analytics import (calculate_team_statistics,
-                             get_average_simulation_results)
-from utils.data_processing import (create_matchup_dataframe,
-                                   create_team_dataframe, validate_input_data)
+from utils.analytics import calculate_team_statistics, get_average_simulation_results
+from utils.data_processing import (
+    create_matchup_dataframe,
+    create_team_dataframe,
+    validate_input_data,
+)
 from utils.simulations import run_monte_carlo_simulation
 
 
@@ -27,12 +29,10 @@ def lambda_handler(event, context):
 
         return {
             "statusCode": 200,
-            "body": json.dumps(
-                {
-                    "standings": standings.to_dict(orient="records"),
-                    "average_simulation_results": average_simulation_results,
-                }
-            ),
+            "body": {
+                "standings": standings.to_dict(orient="records"),
+                "average_simulation_results": average_simulation_results,
+            },
         }
 
     except Exception as e:

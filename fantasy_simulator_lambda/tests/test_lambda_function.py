@@ -3,8 +3,11 @@ import json
 import pytest
 from lambda_function import lambda_handler
 from utils.analytics import calculate_team_statistics
-from utils.data_processing import (create_matchup_dataframe,
-                                   create_team_dataframe, validate_input_data)
+from utils.data_processing import (
+    create_matchup_dataframe,
+    create_team_dataframe,
+    validate_input_data,
+)
 from utils.simulations import run_monte_carlo_simulation
 
 sample_event = {

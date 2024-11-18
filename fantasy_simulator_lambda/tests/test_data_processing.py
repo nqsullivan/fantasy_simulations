@@ -1,7 +1,10 @@
 import pandas as pd
 import pytest
-from utils.data_processing import (create_matchup_dataframe,
-                                   create_team_dataframe, validate_input_data)
+from utils.data_processing import (
+    create_matchup_dataframe,
+    create_team_dataframe,
+    validate_input_data,
+)
 
 valid_teams = [
     {
