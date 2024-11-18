@@ -6,10 +6,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "fantasy-simulator-lambda-tfstate"
-    region  = "us-east-1"
-    key     = "terraform.tfstate"
-    profile = "personal"
+    bucket  = ""
+    region  = ""
+    profile = ""
+    key     = ""
   }
 }
 
