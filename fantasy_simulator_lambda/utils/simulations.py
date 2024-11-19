@@ -1,10 +1,11 @@
 import numpy as np
 import pandas as pd
 from concurrent.futures import ProcessPoolExecutor, as_completed
+import os
 
-BATCH_SIZE = 500
+BATCH_SIZE = 1_000
 TOTAL_ITERATIONS = 10_000
-MAX_WORKERS = 10
+MAX_WORKERS = os.cpu_count()
 
 
 def simulate_match(team1, team2):

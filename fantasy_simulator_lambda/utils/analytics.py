@@ -1,9 +1,10 @@
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import pandas as pd
 import warnings
+import os
 
-MAX_WORKERS = 10
-BATCH_SIZE = 500
+MAX_WORKERS = os.cpu_count()
+BATCH_SIZE = 1_000
 
 
 def calculate_for_team_batch(
