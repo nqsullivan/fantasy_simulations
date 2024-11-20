@@ -4,8 +4,14 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "BUCKET_NAME" {
+variable "SIMULATOR_BUCKET_NAME" {
   description = "The name of the S3 bucket"
   type        = string
   default     = "sleeper-fantasy-simulations"
+}
+
+variable "WEBAPP_BUCKET_NAME" {
+  description = "The name of the S3 bucket for the webapp"
+  type        = string
+  default     = "fantasy-simulator.nsulliv.com"
 }

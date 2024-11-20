@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-card class="input-card">
+    <mat-card-content>
+      <form (ngSubmit)="validateLeagueId()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter Sleeper League ID</mat-label>
+          <input
+            matInput
+            [(ngModel)]="leagueId"
+            name="leagueId"
+            required
+            placeholder="e.g., 123456789012345678"
+          />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">
+          Validate and Proceed
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

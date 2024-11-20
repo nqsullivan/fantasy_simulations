@@ -21,7 +21,7 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Create dependencies directory
         run: |
@@ -36,6 +36,20 @@ jobs:
 
       - name: Verify installed dependencies
         run: ls -R fantasy_simulator_lambda/dependencies/python
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Install Node.js dependencies for Angular app
+        working-directory: fantasy_simulator_webapp
+        run: |
+          npm install
+          npm run build --prod
+
+      - name: Verify Angular build output
+        run: ls -R fantasy_simulator_webapp/dist
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
@@ -57,6 +71,11 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+
+      - name: Copy Angular build files
+        run: |
+          mkdir -p terraform/webapp
+          cp -r fantasy_simulator_webapp/dist/* terraform/webapp/
 
       - name: Terraform Plan
         env:

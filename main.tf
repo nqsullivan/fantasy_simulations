@@ -6,18 +6,23 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = ""
-    region  = ""
-    profile = ""
-    key     = ""
+    bucket  = "fantasy-simulator-lambda-tfstate"
+    region  = "us-east-1"
+    key     = "terraform.tfstate"
+    profile = "personal"
   }
 }
 
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
+  profile = "personal"
 
   default_tags {
   }
+}
+
+locals {
+  webapp_domain = "fantasy-simulator.nsulliv.com"
 }
 
 module "lambda" {
@@ -29,9 +34,11 @@ module "lambda" {
 }
 
 module "s3" {
-  source      = "./modules/s3"
-  bucket_name = var.BUCKET_NAME
-  role_name   = aws_iam_role.fantasy_simulator_lambda-role.name
+  source                = "./modules/s3"
+  webapp_bucket_name    = var.WEBAPP_BUCKET_NAME
+  simulator_bucket_name = var.SIMULATOR_BUCKET_NAME
+  role_name             = aws_iam_role.fantasy_simulator_lambda-role.name
+  webapp_domain         = local.webapp_domain
 }
 
 module "api_gateway" {
@@ -40,6 +47,11 @@ module "api_gateway" {
   handler       = "index.handler"
   function_name = module.lambda.fantasy_simulator_lambda_name
   function_arn  = module.lambda.fantasy_simulator_lambda_arn
+}
+
+module "route53" {
+  source                  = "./modules/route53"
+  webapp_domain           = local.webapp_domain
 }
 
 resource "aws_iam_role" "fantasy_simulator_lambda-role" {

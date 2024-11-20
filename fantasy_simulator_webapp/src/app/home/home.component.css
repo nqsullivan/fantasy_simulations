@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height to center the input vertically */
+    background-color: #f5f5f5; /* Light background for a clean look */
+  }
+  
+  .input-card {
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Constrain the width for a better visual appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
