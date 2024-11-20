@@ -6,16 +6,16 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "fantasy-simulator-lambda-tfstate"
-    region  = "us-east-1"
-    key     = "terraform.tfstate"
-    profile = "personal"
+    bucket  = ""
+    region  = ""
+    key     = ""
+    profile = ""
   }
 }
 
 provider "aws" {
   region  = var.aws_region
-  profile = "personal"
+  profile = ""
 
   default_tags {
   }
@@ -50,8 +50,8 @@ module "api_gateway" {
 }
 
 module "route53" {
-  source                  = "./modules/route53"
-  webapp_domain           = local.webapp_domain
+  source        = "./modules/route53"
+  webapp_domain = local.webapp_domain
 }
 
 resource "aws_iam_role" "fantasy_simulator_lambda-role" {
