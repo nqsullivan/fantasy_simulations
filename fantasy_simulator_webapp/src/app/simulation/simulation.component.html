@@ -1,4 +1,65 @@
 <div class="container">
+  <div class="right-pane">
+    <h1>Simulation Configuration & Results</h1>
+    <mat-card>
+      <mat-card-content>
+        <form (ngSubmit)="runSimulation()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Number of Simulations</mat-label>
+            <input
+              matInput
+              [(ngModel)]="numSimulations"
+              name="numSimulations"
+              required
+            />
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">
+            Run Simulation
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <h1>Aggregate Results</h1>
+    <div class="aggregate-table" *ngIf="aggregateResults.length > 0">
+      <table mat-table [dataSource]="aggregateResults" class="mat-elevation-z8">
+        <!-- Team Name Column -->
+        <ng-container matColumnDef="teamName">
+          <th mat-header-cell *matHeaderCellDef>Team</th>
+          <td mat-cell *matCellDef="let result">{{ result.teamName }}</td>
+        </ng-container>
+
+        <!-- Average Wins Column -->
+        <ng-container matColumnDef="averageWins">
+          <th mat-header-cell *matHeaderCellDef>Average Wins</th>
+          <td mat-cell *matCellDef="let result">{{ result.averageWins }}</td>
+        </ng-container>
+
+        <!-- Average Losses Column -->
+        <ng-container matColumnDef="averageLosses">
+          <th mat-header-cell *matHeaderCellDef>Average Losses</th>
+          <td mat-cell *matCellDef="let result">{{ result.averageLosses }}</td>
+        </ng-container>
+
+        <!-- Playoff Percentage Column -->
+        <ng-container matColumnDef="playoffPercentage">
+          <th mat-header-cell *matHeaderCellDef>Playoff Percentage</th>
+          <td mat-cell *matCellDef="let result">
+            {{ result.playoffPercentage }}
+          </td>
+        </ng-container>
+
+        <!-- Total Points Column -->
+        <ng-container matColumnDef="totalPoints">
+          <th mat-header-cell *matHeaderCellDef>Total PF</th>
+          <td mat-cell *matCellDef="let result">{{ result.totalPoints }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="aggregateColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: aggregateColumns"></tr>
+      </table>
+    </div>
+  </div>
   <div class="left-pane">
     <h1>Remaining Schedule</h1>
     <div class="matchup-table" *ngIf="matchups.length > 0">
@@ -67,68 +128,6 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="right-pane">
-    <h1>Simulation Configuration & Results</h1>
-    <mat-card>
-      <mat-card-content>
-        <form (ngSubmit)="runSimulation()">
-          <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Number of Simulations</mat-label>
-            <input
-              matInput
-              [(ngModel)]="numSimulations"
-              name="numSimulations"
-              required
-            />
-          </mat-form-field>
-          <button mat-raised-button color="primary" type="submit">
-            Run Simulation
-          </button>
-        </form>
-      </mat-card-content>
-    </mat-card>
-
-    <h1>Aggregate Results</h1>
-    <div class="aggregate-table" *ngIf="aggregateResults.length > 0">
-      <table mat-table [dataSource]="aggregateResults" class="mat-elevation-z8">
-        <!-- Team Name Column -->
-        <ng-container matColumnDef="teamName">
-          <th mat-header-cell *matHeaderCellDef>Team</th>
-          <td mat-cell *matCellDef="let result">{{ result.teamName }}</td>
-        </ng-container>
-
-        <!-- Average Wins Column -->
-        <ng-container matColumnDef="averageWins">
-          <th mat-header-cell *matHeaderCellDef>Average Wins</th>
-          <td mat-cell *matCellDef="let result">{{ result.averageWins }}</td>
-        </ng-container>
-
-        <!-- Average Losses Column -->
-        <ng-container matColumnDef="averageLosses">
-          <th mat-header-cell *matHeaderCellDef>Average Losses</th>
-          <td mat-cell *matCellDef="let result">{{ result.averageLosses }}</td>
-        </ng-container>
-
-        <!-- Playoff Percentage Column -->
-        <ng-container matColumnDef="playoffPercentage">
-          <th mat-header-cell *matHeaderCellDef>Playoff Percentage</th>
-          <td mat-cell *matCellDef="let result">
-            {{ result.playoffPercentage }}
-          </td>
-        </ng-container>
-
-        <!-- Total Points Column -->
-        <ng-container matColumnDef="totalPoints">
-          <th mat-header-cell *matHeaderCellDef>Total PF</th>
-          <td mat-cell *matCellDef="let result">{{ result.totalPoints }}</td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="aggregateColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: aggregateColumns"></tr>
       </table>
     </div>
   </div>

@@ -12,6 +12,19 @@ resource "aws_s3_bucket_website_configuration" "webapp_bucket_website" {
   index_document {
     suffix = "index.html"
   }
+
+  routing_rules = <<EOF
+[
+  {
+    "Condition": {
+      "HttpErrorCodeReturnedEquals": "404"
+    },
+    "Redirect": {
+      "ReplaceKeyWith": "index.html"
+    }
+  }
+]
+EOF
 }
 
 resource "aws_s3_object" "webapp_files" {

@@ -72,9 +72,11 @@ export class SimulationComponent implements OnInit {
       console.log('Stored roster data:', this.simulationService.rosters);
       console.log('Stored matchup data:', this.simulationService.matchups);
       console.log('Stored league data:', this.simulationService.leagueData);
+
+      this.runSimulation();
     } else {
-      this.simulationService.fetchFullLeagueData(this.leagueId).subscribe(
-        (fullLeagueData: any) => {
+      this.simulationService.fetchFullLeagueData(this.leagueId).subscribe({
+        next: (fullLeagueData: any) => {
           console.log('League data fetched successfully:', fullLeagueData);
           this.matchups = fullLeagueData.matchups;
           this.currentWeek = this.simulationService.leagueData?.settings?.leg;
@@ -83,18 +85,24 @@ export class SimulationComponent implements OnInit {
           console.log('Stored roster data:', this.simulationService.rosters);
           console.log('Stored matchup data:', this.simulationService.matchups);
           console.log('Stored league data:', this.simulationService.leagueData);
+
+          this.runSimulation();
         },
-        (error) => {
+        error: (error) => {
           console.error('Error fetching league data:', error);
-        }
-      );
+        },
+      });
     }
   }
 
   updateDisplayedMatchups(): void {
     this.displayedMatchups = this.matchups.reduce(
       (acc: any[], matchup: any) => {
-        if (matchup.week >= this.currentWeek && matchup.week < this.simulationService.leagueData?.settings?.playoff_week_start - 1) {
+        if (
+          matchup.week >= this.currentWeek &&
+          matchup.week <
+            this.simulationService.leagueData?.settings?.playoff_week_start - 1
+        ) {
           acc.push(matchup);
         }
         return acc;
@@ -161,7 +169,7 @@ export class SimulationComponent implements OnInit {
         averageLosses: (record.losses / this.numSimulations).toFixed(2),
         playoffPercentage:
           ((record.playoffCount / this.numSimulations) * 100).toFixed(2) + '%',
-        totalPoints: record.points,
+        totalPoints: (record.points / this.numSimulations).toFixed(2),
       };
     });
 
