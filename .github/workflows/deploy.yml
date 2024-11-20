@@ -18,25 +18,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-
-      - name: Create dependencies directory
-        run: |
-          mkdir -p fantasy_simulator_lambda/dependencies/python
-
-      - name: Install Python dependencies
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install --upgrade pip
-          pip install -r fantasy_simulator_lambda/requirements.txt --target fantasy_simulator_lambda/dependencies/python
-
-      - name: Verify installed dependencies
-        run: ls -R fantasy_simulator_lambda/dependencies/python
-
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
