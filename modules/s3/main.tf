@@ -17,20 +17,28 @@ resource "aws_s3_bucket_website_configuration" "webapp_bucket_website" {
 resource "aws_s3_object" "webapp_files" {
   for_each = fileset("${path.module}/../../fantasy_simulator_webapp/dist/fantasy_simulator_webapp/browser", "**/*")
 
-  bucket = aws_s3_bucket.webapp_bucket.id
-  key    = each.value
-  source = "${path.module}/../../fantasy_simulator_webapp/dist/fantasy_simulator_webapp/browser/${each.value}"
+  bucket      = aws_s3_bucket.webapp_bucket.id
+  key         = each.value
+  source      = "${path.module}/../../fantasy_simulator_webapp/dist/fantasy_simulator_webapp/browser/${each.value}"
+  etag        = filemd5("${path.module}/../../fantasy_simulator_webapp/dist/fantasy_simulator_webapp/browser/${each.value}")
+  source_hash = filesha256("${path.module}/../../fantasy_simulator_webapp/dist/fantasy_simulator_webapp/browser/${each.value}")
 
-  content_type = tomap({
-    "html" = "text/html",
-    "css"  = "text/css",
-    "js"   = "application/javascript",
-    "png"  = "image/png",
-    "jpg"  = "image/jpeg",
-    "jpeg" = "image/jpeg",
-    "svg"  = "image/svg+xml",
-    "ico"  = "image/x-icon"
-  })[split(".", each.value)[length(split(".", each.value)) - 1]]
+  content_type = lookup(
+    tomap({
+      "html" = "text/html",
+      "css"  = "text/css",
+      "js"   = "application/javascript",
+      "png"  = "image/png",
+      "jpg"  = "image/jpeg",
+      "jpeg" = "image/jpeg",
+      "svg"  = "image/svg+xml",
+      "ico"  = "image/x-icon",
+      "txt"  = "text/plain",
+      "json" = "application/json"
+    }),
+    split(".", each.value)[length(split(".", each.value)) - 1],
+    "application/octet-stream"
+  )
 }
 
 resource "aws_s3_bucket_policy" "webapp_bucket_policy" {
