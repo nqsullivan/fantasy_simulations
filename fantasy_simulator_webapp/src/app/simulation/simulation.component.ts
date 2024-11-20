@@ -48,6 +48,7 @@ export class SimulationComponent implements OnInit {
     'averageWins',
     'averageLosses',
     'playoffPercentage',
+    'averageSeed',
     'totalPoints',
   ];
 
@@ -138,7 +139,13 @@ export class SimulationComponent implements OnInit {
   calculateAggregateResults(): void {
     const teamAggregate: Record<
       string,
-      { wins: number; losses: number; points: number; playoffCount: number }
+      {
+        wins: number;
+        losses: number;
+        points: number;
+        playoffCount: number;
+        averageSeed: number | null;
+      }
     > = {};
 
     this.simulationResults?.forEach((simulation) => {
@@ -149,6 +156,7 @@ export class SimulationComponent implements OnInit {
             losses: 0,
             points: 0,
             playoffCount: 0,
+            averageSeed: null,
           };
         }
         teamAggregate[teamRecord.teamId].wins += teamRecord.wins;
@@ -156,6 +164,8 @@ export class SimulationComponent implements OnInit {
         teamAggregate[teamRecord.teamId].points += teamRecord.points;
         if (simulation.playoffTeams.includes(teamRecord.teamId)) {
           teamAggregate[teamRecord.teamId].playoffCount += 1;
+          const teamIndex = simulation.playoffTeams.indexOf(teamRecord.teamId);
+          teamAggregate[teamRecord.teamId].averageSeed += teamIndex + 1;
         }
       });
     });
@@ -170,6 +180,7 @@ export class SimulationComponent implements OnInit {
         playoffPercentage:
           ((record.playoffCount / this.numSimulations) * 100).toFixed(2) + '%',
         totalPoints: (record.points / this.numSimulations).toFixed(2),
+        averageSeed: record.averageSeed ? (record.averageSeed / record.playoffCount).toFixed(2) : null,
       };
     });
 
