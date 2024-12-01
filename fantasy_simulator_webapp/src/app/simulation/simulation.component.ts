@@ -100,7 +100,7 @@ export class SimulationComponent implements OnInit {
     this.displayedMatchups = this.matchups.reduce(
       (acc: any[], matchup: any) => {
         if (
-          matchup.week >= this.currentWeek &&
+          matchup.week >= this.currentWeek - 1 && // Include the current week/latest matchup
           matchup.week <
             this.simulationService.leagueData?.settings?.playoff_week_start - 1
         ) {
