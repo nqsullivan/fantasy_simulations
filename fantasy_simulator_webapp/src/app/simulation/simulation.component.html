@@ -103,15 +103,11 @@
           <th mat-header-cell *matHeaderCellDef>Team 1 Score</th>
           <td mat-cell *matCellDef="let matchup">
             <input
-              *ngIf="matchup.week >= currentWeek"
               matInput
               type="number"
               [(ngModel)]="matchup.team1_score"
               placeholder="Enter score"
             />
-            <span *ngIf="matchup.week < currentWeek">{{
-              matchup.team1_score
-            }}</span>
           </td>
         </ng-container>
 
@@ -120,15 +116,11 @@
           <th mat-header-cell *matHeaderCellDef>Team 2 Score</th>
           <td mat-cell *matCellDef="let matchup">
             <input
-              *ngIf="matchup.week >= currentWeek"
               matInput
               type="number"
               [(ngModel)]="matchup.team2_score"
               placeholder="Enter score"
             />
-            <span *ngIf="matchup.week < currentWeek">{{
-              matchup.team2_score
-            }}</span>
           </td>
         </ng-container>
 
