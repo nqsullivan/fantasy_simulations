@@ -116,7 +116,7 @@ export class SimulationComponent implements OnInit {
     // Combine the previous matchups with the displayed matchups
     this.displayedMatchups = this.matchups.reduce(
       (acc: any[], matchup: any) => {
-        if (matchup.week < this.currentWeek) {
+        if (matchup.week < this.currentWeek - 1) {
           acc.push(matchup);
         }
         return acc;
